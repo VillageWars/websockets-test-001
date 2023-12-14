@@ -101,6 +101,6 @@ async def main():
 
 
 if __name__ == "__main__":
-    #thread = threading.Thread(target=app.run, kwargs={"port":"8000"})
-    #thread.start()
+    thread = threading.Thread(target=app.run, kwargs={"port":"8000"})
+    thread.start()
     asyncio.run(main())

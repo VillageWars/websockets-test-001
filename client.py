@@ -4,8 +4,8 @@ import json
 
 # To test, run python -m websockets wss://websockets-test-001-91c83418594c.herokuapp.com/
 
-#URI = 'wss://websockets-test-001-91c83418594c.herokuapp.com/'
-URI = 'ws://localhost:8001'
+URI = 'wss://websockets-test-001-91c83418594c.herokuapp.com/'
+#URI = 'ws://localhost:8001'
 
 async def connect():
     print('Connecting...')
