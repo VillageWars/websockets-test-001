@@ -92,15 +92,15 @@ async def handler(websocket):
 async def main():
     # Set the stop condition when receiving SIGTERM.
     loop = asyncio.get_running_loop()
-    stop = loop.create_future()
-    loop.add_signal_handler(signal.SIGTERM, stop.set_result, None)
+    #stop = loop.create_future()
+    #loop.add_signal_handler(signal.SIGTERM, stop.set_result, None)
 
     port = int(os.environ.get("PORT", "8001"))
     async with websockets.serve(handler, "", port):
-        await stop
+        await asyncio.Future()  # run forever
 
 
 if __name__ == "__main__":
-    thread = threading.Thread(target=app.run, kwargs={"port":"8000"})
-    thread.start()
+    #thread = threading.Thread(target=app.run, kwargs={"port":"8000"})
+    #thread.start()
     asyncio.run(main())

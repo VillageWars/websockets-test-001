@@ -2,9 +2,14 @@ import asyncio
 import websockets
 import json
 
+# To test, run python -m websockets wss://websockets-test-001-91c83418594c.herokuapp.com/
+
+#URI = 'wss://websockets-test-001-91c83418594c.herokuapp.com/'
+URI = 'ws://localhost:8001'
+
 async def connect():
     print('Connecting...')
-    async with websockets.connect('ws://localhost:8001') as websocket:
+    async with websockets.connect(URI) as websocket:
         print('Connected!')
         while True:
             message = input("Enter a message to send: ")
